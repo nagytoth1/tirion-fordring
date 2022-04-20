@@ -29,9 +29,11 @@ public class UtilHelper {
             {
                 System.out.println(String.format("Logger error... %s", ex.getLocalizedMessage()));
             }
+            
             logger = Logger.getLogger(Log.class.getName());
             logger.addHandler(fHandler);
             fHandler.setFormatter(new SimpleFormatter());
+            
             logger.setLevel(Level.FINE);
             logger.fine("Logger has been initialized");
             return logger;
