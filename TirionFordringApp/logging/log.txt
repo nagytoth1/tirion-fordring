@@ -1,0 +1,4 @@
+ápr. 20, 2022 7:41:21 DE. progtech.UtilHelper$Log initLogger
+FINE: Logger has been initialized
+ápr. 20, 2022 7:41:22 DE. progtech.UtilHelper$DBHandler initConnector
+FINE: Program has been connected to SQL successfully!
