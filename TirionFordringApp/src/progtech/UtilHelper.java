@@ -14,8 +14,8 @@ import java.util.logging.SimpleFormatter;
 public class UtilHelper {
     public static class Log
     {
-        private static Logger logger;
-        private static FileHandler fHandler;
+        //has to be static final -> Garbage Collector can not free it
+        private static final Logger logger = Logger.getLogger(Log.class.getName());
         
         
         /**
@@ -26,6 +26,7 @@ public class UtilHelper {
         {
             String logFilePath = Configurations.get("LOG_PATH");
             
+            FileHandler fHandler;
             File f = new File(logFilePath);
             try
             {
@@ -35,14 +36,12 @@ public class UtilHelper {
                 if(!f.exists()) f.createNewFile();
                 
                 fHandler = new FileHandler(logFilePath, true);
+                logger.addHandler(fHandler);
+                fHandler.setFormatter(new CustomFormatter());
             } catch (IOException | SecurityException ex)
             {
                 System.out.println(String.format("Logger error... %s", ex.getLocalizedMessage()));
             }
-            
-            logger = Logger.getLogger(Log.class.getName());
-            logger.addHandler(fHandler);
-            fHandler.setFormatter(new SimpleFormatter());
             
             logger.setLevel(Level.FINE);
             logger.fine("Logger has been initialized");
