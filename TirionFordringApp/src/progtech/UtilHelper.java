@@ -1,11 +1,11 @@
 package progtech;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.FileHandler;
+import java.util.Properties;
+import java.util.logging.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -16,15 +16,25 @@ public class UtilHelper {
     {
         private static Logger logger;
         private static FileHandler fHandler;
-
-        public static Logger initLogger(String path)
+        
+        
+        /**
+         * The function which allows for the logging process to get started properly.
+         * @return The logger instance which handles the logging functionality in connection with log.txt.
+         */
+        public static Logger initLogger()
         {
-            File f = new File(path);
-
+            String logFilePath = Configurations.get("LOG_PATH");
+            
+            File f = new File(logFilePath);
             try
             {
+                //since the config file itself may be missing at this point in the code, hereby I'm defining the path leading to log.txt manually.
+                if(logFilePath.equals("undefined")) logFilePath = "logging\\log.txt"; //we need logger functionality
+                
                 if(!f.exists()) f.createNewFile();
-                fHandler = new FileHandler(path, true);
+                
+                fHandler = new FileHandler(logFilePath, true);
             } catch (IOException | SecurityException ex)
             {
                 System.out.println(String.format("Logger error... %s", ex.getLocalizedMessage()));
@@ -40,33 +50,67 @@ public class UtilHelper {
         }
     }
     
-    public static class DBHandler
+    public static class DBConnection
     {
-        public static Connection initConnector(String url)
+        /**
+         * The method which allows for the database connection to be established properly.
+         * @return A Connection-instance allowing us to execute SQL-commands within our Java-implementation.
+         */
+        public static Connection initConnector()
         {
-            Logger l = Log.logger;
-            Connection conn = null;
+            Logger l = Log.logger; Connection conn = null;
+            String dbFilePath = Configurations.get("DB_PATH");
+            
             try
             {
-                conn = DriverManager.getConnection(url);
+                if(dbFilePath.equals("undefined")) throw new SQLException();
+                conn = DriverManager.getConnection(
+                        String.format("jdbc:sqlite:%s", 
+                                dbFilePath)
+                );
                 l.setLevel(Level.FINE);
                 l.fine("Program has been connected to SQL successfully!");
                 return conn;
             } catch (SQLException e)
             {
-                l.setLevel(Level.SEVERE);
-                l.severe("Database connection failed to be established");
+                l.setLevel(Level.WARNING);
+                l.warning("Database connection failed to be established");
                 return null;
             } finally
             {
                 if(conn != null) try {
                     conn.close();
                 } catch (SQLException ex) {
-                    l.setLevel(Level.SEVERE);
-                    l.severe("SQL-Connection failed to be closed");
+                    l.setLevel(Level.WARNING);
+                    l.warning("SQL-Connection failed to be closed");
                 }
                 
             }
+        }
+    }
+    
+    public static class Configurations
+    {
+        private static final Properties prop = new Properties();
+        private static final Logger l = Log.logger;
+        public static String get(String configTag)
+        {
+            try
+            {
+                prop.load(new FileReader(new File("config.properties")));
+                return prop.getProperty(configTag, "undefined");
+            } 
+            catch(FileNotFoundException f)
+            {
+                l.setLevel(Level.WARNING);
+                l.warning("Config file could not be found.");
+            }
+            catch (IOException ex)
+            {
+                l.setLevel(Level.WARNING);
+                l.warning("Config file could not be opened");
+            }
+            return "undefined";
         }
     }
 }

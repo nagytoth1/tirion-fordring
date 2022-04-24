@@ -1,4 +1,20 @@
-ápr. 20, 2022 7:41:21 DE. progtech.UtilHelper$Log initLogger
+ápr. 24, 2022 7:14:02 DU. progtech.UtilHelper$Log initLogger
 FINE: Logger has been initialized
-ápr. 20, 2022 7:41:22 DE. progtech.UtilHelper$DBHandler initConnector
+ápr. 24, 2022 7:14:02 DU. progtech.UtilHelper$DBConnection initConnector
+FINE: Program has been connected to SQL successfully!
+ápr. 24, 2022 7:14:09 DU. progtech.UtilHelper$Log initLogger
+FINE: Logger has been initialized
+ápr. 24, 2022 7:14:10 DU. progtech.UtilHelper$DBConnection initConnector
+FINE: Program has been connected to SQL successfully!
+ápr. 24, 2022 7:14:17 DU. progtech.UtilHelper$Log initLogger
+FINE: Logger has been initialized
+ápr. 24, 2022 7:14:17 DU. progtech.UtilHelper$DBConnection initConnector
+FINE: Program has been connected to SQL successfully!
+ápr. 24, 2022 7:14:31 DU. progtech.UtilHelper$Log initLogger
+FINE: Logger has been initialized
+ápr. 24, 2022 7:14:31 DU. progtech.UtilHelper$DBConnection initConnector
+FINE: Program has been connected to SQL successfully!
+ápr. 24, 2022 7:14:47 DU. progtech.UtilHelper$Log initLogger
+FINE: Logger has been initialized
+ápr. 24, 2022 7:14:47 DU. progtech.UtilHelper$DBConnection initConnector
 FINE: Program has been connected to SQL successfully!
