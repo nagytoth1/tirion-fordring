@@ -1,5 +1,6 @@
 package progtech.entities;
 
-public abstract class Building {
+public abstract class Building
+{
 
 }

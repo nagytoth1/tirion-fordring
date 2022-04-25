@@ -5,7 +5,8 @@ import java.util.List;
 import progtech.observer.Observer;
 import progtech.observer.Subject;
 
-public class Player implements Subject{
+public class Player implements Subject
+{
     private byte DEF_UNIT_NUMBER; //hány egységet kap a játékos?
     private byte DEF_BUILDING_NUMBER; //hány épületet kap a játékos?
     private int currentGold; //jelenlegi aranymennyiség, ami a játékosnál van
@@ -17,8 +18,9 @@ public class Player implements Subject{
 
     public Player()
     {
-        this.currentGold = 300; this.currentWood = 300;
-        this.sumGold = 0;
+        this.currentGold = 300; //300 gold
+        this.currentWood = 300; //300 fa
+        this.sumGold = 0; //alapból 0 pénz
         ownedBuildings = new ArrayList<>(); //townhall-t alapból megkapja
         ownedUnits = new ArrayList<>(); //kaphatna 3 peon-t ingyen, viszont akkor ennyit le kell vonni az achievement miatt
     }
