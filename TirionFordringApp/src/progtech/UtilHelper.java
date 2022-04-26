@@ -8,10 +8,13 @@ import java.util.Properties;
 import java.util.logging.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 
 public class UtilHelper {
+    /**
+     * This class provides the appropriate logging service into a specific, predefined file.
+     * By default the file path is: logging/log.txt
+     */
     public static class Log
     {
         //has to be static final -> Garbage Collector can not free it
@@ -31,6 +34,7 @@ public class UtilHelper {
             try
             {
                 //since the config file itself may be missing at this point in the code, hereby I'm defining the path leading to log.txt manually.
+                //Default path: logging/log.txt
                 if(logFilePath.equals("undefined")) logFilePath = "logging\\log.txt"; //we need logger functionality
                 
                 if(!f.exists()) f.createNewFile();

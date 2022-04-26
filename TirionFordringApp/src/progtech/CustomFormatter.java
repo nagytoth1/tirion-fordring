@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.*;
 
+/**
+ * Sets formatting for the Log class in UtilHelper.
+ * (Formatting means the way we meant the log messages to be written into the log.txt file)
+ */
 public class CustomFormatter extends Formatter{
 
     @Override
