@@ -7,8 +7,8 @@ Rendszer célja, hogy minél több számítógépes felületen kiváló élmény
 
 ## Projektterv
 Résztvevők és főbb szerepköreik:
-	1. Nagy-Tóth Bence:
-	2. Sipos Levente: 
+	1. Nagy-Tóth Bence: Adatbázisrendszer kialakítása/tervezése, UML készítés, Observer/megfigyelő megírása, Java SWING app létrehozása.
+	2. Sipos Levente: UML készítése, Absztrakt Factory megírása, GUI kialakítása.
 
 
 ## Követelmények
@@ -89,7 +89,14 @@ Szellemi Tulajdon egyéb jogosultjai által.
 
 
 ## Implementációs terv
-	#TODO: Tervezési minták meghatározása
+	 Absztrakt gyár: Az Absztrakt gyár (angolul: Absztrakt Factory) egy létrehozási 
+	 tervezési minta, amely olyan objektumok gyártására jó, amelyek képesek egymással együttműködni, 
+	 ennek megfelelően több létrehozásra alkalmas metódust (angolul: create method) tartalmaz
+	 Megfigyelő: A Megfigyelő (angolul: Observer) egy viselkedési tervezési minta, amely 
+	 egy esemény által kiváltott változékony metódust emel ki egy egy-sok kapcsolat sok oldalára, és amely 
+	 műsorszórással hívja meg a kiemelt metódusokat. Ez a tervezési minta a HP tervezési alapelvet valósítja 
+	 meg. A megfigyelőnek két fajtája van a húzó (angolul: pull) és a toló (angolul: push), amelyek abban 
+	 különböznek, hogyan adjuk át az eseményt a megfigyelőknek
 
 ## Funkcionális terv
 Rendszerszereplők: Rendszergazdai és felhasználói jogosultsággal rendelkezők

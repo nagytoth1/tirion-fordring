@@ -1,6 +1,6 @@
-package progtech.AbstractFactory;
+package progtech.AbstractUnitFactory;
 
-import progtech.entities.AllyWarriror;
+import progtech.entities.AllyWarrior;
 import progtech.entities.Unit;
 
 public class AllyWarriorFactory extends UnitFactory
@@ -8,6 +8,6 @@ public class AllyWarriorFactory extends UnitFactory
     @Override
     public Unit CreateUnit()
     {
-        return new AllyWarriror();
+        return new AllyWarrior();
     }
 }

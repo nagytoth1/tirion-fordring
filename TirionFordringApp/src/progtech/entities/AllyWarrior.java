@@ -1,9 +1,9 @@
 package progtech.entities;
 
-public class AllyWarriror extends Unit
+public class AllyWarrior extends Unit
 {
 
-    public AllyWarriror()
+    public AllyWarrior()
     {
         super((byte)100,(byte)30,"Footman");
     }

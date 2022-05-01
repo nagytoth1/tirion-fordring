@@ -1,4 +1,4 @@
-package progtech.AbstractFactory;
+package progtech.AbstractUnitFactory;
 
 import progtech.entities.HordeWorker;
 import progtech.entities.Unit;
