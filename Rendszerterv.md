@@ -13,27 +13,28 @@ Résztvevők és főbb szerepköreik:
 
 ## Követelmények
 
-	#### Funkcionális követelmények: 
-		- Frakció kiválasztás (Orc/Human)
-		- Alap nyersanyagok beállítása (30 fa, 30 arany, 30 kő)
-		- Vásárlás funkció (egységek / épületek a meglévő nyersanyag függvényében)
-		- Nyersanyagok termelése (munkások/peon-on keresztül)
-		- Nyersanyag nyilvántartása (fa,arany,kő)
+#### Funkcionális követelmények: 
+- Frakció kiválasztás (Orc/Human)
+- Alap nyersanyagok beállítása (30 fa, 30 arany, 30 kő)
+- Vásárlás funkció (egységek / épületek a meglévő nyersanyag függvényében)
+- Nyersanyagok termelése (munkások/peon-on keresztül)
+- Nyersanyag nyilvántartása (fa,arany,kő)
 	
-	#### Nem funkcionális követelmények: 
-		- Felhasználóbarát, transzparens, könnyen értelmezhető felület
-		- Tetszőlegesen kibővíthető újabb egységekkel, újabb típusú épületekkel (patch-elhető)
-		- Hibatűrés: pl. vizsgálja a vásárlás tranzakciója előtt, hogy a rendelkezésre álló nyersanyag megvan-e
-		- A kód egy része legyen újrahasznosítható, ne fussuk ugyanazokat a köröket a fejlesztés során.
-		- A grafikus felület legyen kompatibilis az elterjedtebb felbontási szabványokkal (800x600, 1024x768, 1280x1024, 1900x1080)
-		- Telepítése legyen a játékosok számára egyszerű
-		- Lehetőleg ne kerüljön sor számos kis fejlesztésre, legyenek inkább kevesebb számú, de nagyobb horderejű patch-ek.
+#### Nem funkcionális követelmények: 
+- Felhasználóbarát, transzparens, könnyen értelmezhető felület
+- Tetszőlegesen kibővíthető újabb egységekkel, újabb típusú épületekkel (patch-elhető)
+- Hibatűrés: pl. vizsgálja a vásárlás tranzakciója előtt, hogy a rendelkezésre álló nyersanyag megvan-e
+- A kód egy része legyen újrahasznosítható, ne fussuk ugyanazokat a köröket a fejlesztés során.
+- A grafikus felület legyen kompatibilis az elterjedtebb felbontási szabványokkal<br>
+(800x600, 1024x768, 1280x1024, 1900x1080)
+- Telepítése legyen a játékosok számára egyszerű
+- Lehetőleg ne kerüljön sor számos kis fejlesztésre, legyenek inkább kevesebb számú, de nagyobb horderejű patch-ek.
 	
 ### Törvényi előírások, szabványok: 
-	- GDPR-nak való megfelelés - Általános információk - Szellemi tulajdon - Használat - Felelősségi szabályok - Technikai követelmények - Garancia és kártérítés - 2013. évi V. törvény - Európai Parlament és Tanács 2016. április 27-i (EU) 2016/679 Rendelete -2011. évi CXII. törvény - a szerzői jogról szóló 1999. évi LXXVI. törvény - 2001. évi CVIII. törvény
-	- A törvény nem megfelelő ismerete nem mentesít a felelõsségre vonás alól.
+GDPR-nak való megfelelés - Általános információk - Szellemi tulajdon - Használat - Felelősségi szabályok - Technikai követelmények - Garancia és kártérítés - 2013. évi V. törvény - Európai Parlament és Tanács 2016. április 27-i (EU) 2016/679 Rendelete -2011. évi CXII. törvény - a szerzői jogról szóló 1999. évi LXXVI. törvény - 2001. évi CVIII. törvény
+A törvény nem megfelelő ismerete nem mentesít a felelõsségre vonás alól. <br>
 
-	**Kivonat: 18/2018. (V. 31.) utasítás az Informatikai Biztonsági Szabályzatról**
+**Kivonat: 18/2018. (V. 31.) utasítás az Informatikai Biztonsági Szabályzatról**
 		<p>	*171.* 	Az operációs rendszer, az alkalmazás és a hálózati aktív eszköz szoftver verzióját, valamint biztonsági patch szintjét tesztelést követően lehetőség szerint a gyártói támogatással rendelkező, legmagasabb szintre kell hozni.(…) </p>
 		<p>	*177.* 	Meglévő rendszer esetén a biztonságot közvetlenül veszélyeztető hibákat a lehető leghamarabb javítani kell, vagy korrektív kontroll alkalmazásával csökkenteni a kockázatokat. Új rendszer esetén feltárt sérülékenységet a használatbavételig javítani kell. </p>
 		<p>	*178.* 	A hálózatok ki- és bemeneteli pontjait minimalizálni kell, továbbá a ki- és bemeneti pontok adatforgalmát elektronikusan naplózni, és a naplófájlokat ellenőrizni kell.</p>
@@ -44,8 +45,8 @@ Résztvevők és főbb szerepköreik:
 		<p>	*222.* 	A fejlesztés során a biztonságos programozás irányelveit kell követni. A szoftverfejlesztés során a szoftver funkcionalitása mellett fokozott figyelmet kell fordítani a rendszer és a kapcsolódó rendszerek biztonsági követelményeinek betartására is.</p>
 		<p>	*forrás: NJT* </p>
 
-	**Kivonat az 1999. évi LXXVI. szerzői jogi törvényből:**
-		<p>*1.§* 	(2) Szerzői jogi védelem alá tartozik – függetlenül attól, hogy e törvény megnevezi-e – 
+** Kivonat az 1999. évi LXXVI. szerzői jogi törvényből: **
+    <p>*1.§* 	(2) Szerzői jogi védelem alá tartozik – függetlenül attól, hogy e törvény megnevezi-e – 
 					az irodalom, a tudomány és a művészet minden alkotása. Ilyen alkotásnak minősül különösen: (...)</p>
 				<p>&emsp; &emsp;c) a *számítógépi programalkotás és a hozzá tartozó dokumentáció (a továbbiakban: szoftver) akár forráskódban, akár tárgykódban vagy bármilyen más formában* rögzített minden fajtája, ideértve a felhasználói programot és az operációs rendszert is.(...)</p>
 				<p>&emsp;(3) A szerzői jogi védelem az alkotást a szerző szellemi tevékenységéből fakadó egyéni, eredeti jellege alapján illeti meg. A védelem nem függ mennyiségi, minőségi, esztétikai jellemzőktől vagy az alkotás színvonalára vonatkozó értékítélettől. (...)</p>
@@ -85,31 +86,37 @@ Szellemi Tulajdon egyéb jogosultjai által.
 
 
 ## Architekturális terv
-
+![UML image](UMLpicture.PNG "This is our architectural plan represented by UML-diagram")
 
 
 ## Implementációs terv
-	 Absztrakt gyár: Az Absztrakt gyár (angolul: Absztrakt Factory) egy létrehozási 
-	 tervezési minta, amely olyan objektumok gyártására jó, amelyek képesek egymással együttműködni, 
-	 ennek megfelelően több létrehozásra alkalmas metódust (angolul: create method) tartalmaz
-	 Megfigyelő: A Megfigyelő (angolul: Observer) egy viselkedési tervezési minta, amely 
-	 egy esemény által kiváltott változékony metódust emel ki egy egy-sok kapcsolat sok oldalára, és amely 
-	 műsorszórással hívja meg a kiemelt metódusokat. Ez a tervezési minta a HP tervezési alapelvet valósítja 
-	 meg. A megfigyelőnek két fajtája van a húzó (angolul: pull) és a toló (angolul: push), amelyek abban 
-	 különböznek, hogyan adjuk át az eseményt a megfigyelőknek
+
+**Absztrakt gyár**:
+
+Az Absztrakt gyár (angolul: *Abstract Factory*) egy *létrehozási 
+tervezési minta*, amely olyan objektumok gyártására jó, amelyek képesek egymással együttműködni,  ennek megfelelően **több létrehozásra alkalmas metódust** (angolul: *create method*) tartalmaz.
+
+**Megfigyelő**: 
+
+A Megfigyelő (angolul: *Observer*) egy *viselkedési tervezési minta*, amely 
+**egy esemény által kiváltott változékony metódust** emel ki egy egy-sok kapcsolat sok oldalára, és amely 
+műsorszórással (angolul: *broadcast*) hívja meg a kiemelt metódusokat.
+<br>A megfigyelőnek két fajtája a húzó (angolul: *pull*) és a toló (angolul: *push*), amelyek abban 
+különböznek, hogyan adjuk át az eseményt a megfigyelőknek.</p>
 
 ## Funkcionális terv
+
 Rendszerszereplők: Rendszergazdai és felhasználói jogosultsággal rendelkezők
 Rendszerhasználati esetek és lefutásaik:
 
 ## Fizikai környezet
 
-	- Az alkalmazás Windows operációs rendszerre készült.
-	- Nincsenek megvásárolt komponenseink
-	- Nincsenek alkalmazáson belüli mikrotranzakciók
-	- Használt alkalmazások és Fejlesztői környezetek:
-	- (Frontend) -> Java Swing
-	- (Backend) -> Java + SQLite
+ - Az alkalmazás Windows operációs rendszerre készült.
+ - Nincsenek megvásárolt komponenseink
+ - Nincsenek alkalmazáson belüli mikrotranzakciók
+ -  Használt alkalmazások és Fejlesztői környezetek:
+ - (Frontend) -> Java Swing
+ - (Backend) -> Java + SQLite
 
 
 ## Absztrakt domain modell
@@ -126,5 +133,3 @@ A tesztelések célja a rendszer és komponensei funkcionalitásának teljes viz
 Tesztelési eljárások
 
 Unit tesztek kiterjednek: 
-
-
