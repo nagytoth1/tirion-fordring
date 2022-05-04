@@ -1,4 +1,6 @@
-package progtech;
+package progtech.main;
+
+import progtech.main.CustomFormatter;
 
 import java.io.*;
 import java.sql.Connection;
