@@ -82,3 +82,65 @@ FINE: Program has been connected to SQL successfully!
 [WARNING]	2022. May 04. 07:49:29 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
 [FINE]	2022. May 04. 08:04:50 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
 [WARNING]	2022. May 04. 08:04:50 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:10:51 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:10:51 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:18:36 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:18:36 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:22:51 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:22:52 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:29:51 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:29:51 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:31:55 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:31:55 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:36:02 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:36:02 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:36:12 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:36:12 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:36:35 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:36:35 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:39:58 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:39:58 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:41:35 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:41:35 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:42:34 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:42:34 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:49:50 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:49:50 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:50:21 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:50:21 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:50:33 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:50:33 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:51:28 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:51:28 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:51:36 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:51:36 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:51:46 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:51:46 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:51:56 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:51:56 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:52:06 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:52:06 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:53:41 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:53:41 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:53:50 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:53:50 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 10:54:47 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 10:54:47 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:02:39 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:02:39 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:03:19 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:03:19 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:04:05 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:04:05 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:08:05 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:08:05 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:08:18 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:08:18 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:09:12 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:09:12 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:13:49 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:13:49 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:15:03 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:15:03 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established
+[FINE]	2022. May 06. 11:17:18 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[WARNING]	2022. May 06. 11:17:19 - [progtech.main.UtilHelper$DBConnection.initConnector] - Database connection failed to be established

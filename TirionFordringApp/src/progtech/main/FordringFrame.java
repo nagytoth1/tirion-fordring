@@ -8,31 +8,25 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.Buffer;
 import java.sql.Connection;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class FordringFrame extends JFrame
 {
     private GameScreen gameScreen;
 
-    private BufferedImage img;  //extends image
+
+   //extends image
 
     public FordringFrame()
     {
         mainScreenBasic();
         //initComponents();
     }
-    private void importImg()
-    {
-        InputStream is = getClass().getResourceAsStream("/sprites.png");
-        try {
-            img = ImageIO.read(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,20 +111,23 @@ public class FordringFrame extends JFrame
     }// </editor-fold>//GEN-END:initComponents
     private void mainScreenBasic()
     {
+
         choosePanel = new javax.swing.JPanel();
         lblChoose = new javax.swing.JLabel();
         btnAlliance = new javax.swing.JButton();
         btnHorde = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280,720 ));
+        setPreferredSize(new java.awt.Dimension(640,640 ));
         setResizable(false);
         setSize(new java.awt.Dimension(640, 640));
 
         lblChoose.setFont(new java.awt.Font("Inconsolata-g", 0, 18)); // NOI18N
         lblChoose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         gameScreen = new GameScreen();
         add(gameScreen);
+
 
         pack();
     }// </editor-fold>//GE
@@ -167,6 +164,7 @@ public class FordringFrame extends JFrame
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton btnAlliance;
     private javax.swing.JButton btnHorde;
     private javax.swing.JPanel choosePanel;
