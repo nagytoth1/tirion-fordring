@@ -3,9 +3,7 @@ package progtech.main;
 import progtech.main.CustomFormatter;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 import java.util.logging.*;
 import java.util.logging.Level;
@@ -21,8 +19,7 @@ public class UtilHelper {
     {
         //has to be static final -> Garbage Collector can not free it
         private static final Logger logger = Logger.getLogger(Log.class.getName());
-        
-        
+
         /**
          * The function which allows for the logging process to get started properly.
          * @return The logger instance which handles the logging functionality in connection with log.txt.
@@ -46,7 +43,7 @@ public class UtilHelper {
                 fHandler.setFormatter(new CustomFormatter());
             } catch (IOException | SecurityException ex)
             {
-                System.out.println(String.format("Logger error... %s", ex.getLocalizedMessage()));
+                System.out.printf("Logger error... %s\n", ex.getLocalizedMessage());
             }
             
             logger.setLevel(Level.FINE);
@@ -91,6 +88,11 @@ public class UtilHelper {
                 }
                 
             }
+        }
+
+        public static ResultSet getDataFromTable(Connection conn, String tablename, String factionCriteria, String buildingCriteria) throws SQLException {
+            Statement st = conn.createStatement();
+            return st.executeQuery(String.format("SELECT * FROM %s WHERE faction='%s' AND ", tablename, factionCriteria)  + " type LIKE '%"  + buildingCriteria + "%';");
         }
     }
     

@@ -1,48 +1,49 @@
 package progtech.main;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
+import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FordringFrame extends JFrame
 {
-    public FordringFrame()
-    {
-        mainScreenBasic();
-    }
+    public static Logger logger;
+    public static Connection conn;
+    public FordringFrame(){ setupFrame(); }
     private JPanel mainPanel;
-
-    private void mainScreenBasic()
+    private void setupFrame()
     {
-        setTitle("WOW");
+        Image titleImage;
+        try {
+            titleImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("res/icon.bmp")));
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(640, 640));
+        } catch (IOException e) {
+            System.out.println(e.getLocalizedMessage());
+            return;
+        }
+        setIconImage(titleImage);
+        setTitle("Tirion Fordring");
         setResizable(false);
-        setSize(new java.awt.Dimension(640, 640));
-
-        GameScreen gameScreen = new GameScreen();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setPreferredSize(new Dimension(640, 940));
         setLayout(new BorderLayout());
-        setContentPane(gameScreen);
-      /*  add(gameScreen,BorderLayout.CENTER);*/
-
+        JPanel g1 = new GamePanel();
+        g1.setPreferredSize(new Dimension(640, 640));
+        add(g1);
         pack();
-    }
-
-    private static JFrame setupFrame()
-    {
-        JFrame frame = new FordringFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setLayout(null);
-        frame.setVisible(true);
-        return frame;
     }
     public static void main(String[] args)
     {
-        JFrame main = setupFrame();
-        Logger l = UtilHelper.Log.initLogger();
-        Connection conn = UtilHelper.DBConnection.initConnector();
+        JFrame main = new FordringFrame();
+        main.setVisible(true);
+        logger = UtilHelper.Log.initLogger();
+        conn = UtilHelper.DBConnection.initConnector();
     }
 }

@@ -3,14 +3,13 @@ package progtech.entities;
 public abstract class Building
 {
     private short hp;
-    private byte buildCostGold;
-    private byte buildCostWood;
+    private short buildCostGold;
+    private short buildCostWood;
     private String displayName;
 
 
-    public Building( short hp, byte buildCostGold,byte buildCostWood, String displayName)
+    public Building( short hp, short buildCostGold, short buildCostWood, String displayName)
     {
-
             this.hp = hp;
             this.buildCostWood = buildCostWood;
             this.buildCostGold = buildCostGold;
@@ -19,7 +18,7 @@ public abstract class Building
     }
 
     public short getHp(){ return hp; }
-    public byte getBuildCostGold(){ return buildCostGold; }
-    public byte getBuildCostWood(){ return buildCostWood; }
+    public short getBuildCostGold(){ return buildCostGold; }
+    public short getBuildCostWood(){ return buildCostWood; }
     public String getDisplayName(){ return displayName; }
 }

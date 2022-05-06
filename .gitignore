@@ -4,3 +4,5 @@
 /TirionFordringApp/logging/
 /TirionFordringApp/src/.idea/
 /TirionFordringApp/dist/
+/TirionFordringApp/out/
+*.txt
