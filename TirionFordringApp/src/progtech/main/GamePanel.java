@@ -6,9 +6,11 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class GamePanel extends JPanel
 {
+
     private BufferedImage importImg(String path)
     {
         BufferedImage img = null;
@@ -35,9 +37,14 @@ public class GamePanel extends JPanel
 
     private void addButtons()
     {
+
         BufferedImage townhall =  importImg("res/BTNTownHall.png");
         javax.swing.JButton btnTownHall = new javax.swing.JButton(new ImageIcon(townhall));
         btnTownHall.addActionListener(e -> {
+            //Ide kell meghívni a másik panelt
+
+            System.out.println("CSO");
+
         });
         btnTownHall.setLocation(getWidth() / 2, getHeight() / 2);
         btnTownHall.setSize(IMAGE_UNIT_SIZE*2,IMAGE_UNIT_SIZE*2);

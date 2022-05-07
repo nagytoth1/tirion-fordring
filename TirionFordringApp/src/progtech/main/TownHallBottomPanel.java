@@ -6,9 +6,9 @@ public class TownHallBottomPanel extends Panel
 {
     public TownHallBottomPanel()
     {
-        setBackground(Color.blue);
-        setPreferredSize(new Dimension(100, 100));
-        setLocation(5, 5);
+        setBackground(new Color(255,248,220));
+        setLocation(0,0);
+        setPreferredSize(new Dimension(640, 100));
         setVisible(true);
     }
 

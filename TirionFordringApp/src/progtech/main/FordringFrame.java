@@ -15,8 +15,10 @@ public class FordringFrame extends JFrame
 {
     public static Logger logger;
     public static Connection conn;
+
     public FordringFrame(){ setupFrame(); }
     private JPanel mainPanel;
+
     private void setupFrame()
     {
         Image titleImage;
@@ -32,13 +34,22 @@ public class FordringFrame extends JFrame
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setPreferredSize(new Dimension(640, 940));
+        setPreferredSize(new Dimension(640, 640));
         setLayout(new BorderLayout());
+
+
+       /* g1.setPreferredSize(new Dimension(640, 640));*/
         JPanel g1 = new GamePanel();
-        g1.setPreferredSize(new Dimension(640, 640));
+        JPanel t1 = new TownHallBottomPanel();
+        JPanel peon = new peonBTNPanel();
+
         add(g1);
+        g1.add(t1);
+
+        t1.add(peon);
         pack();
     }
+
     public static void main(String[] args)
     {
         JFrame main = new FordringFrame();
