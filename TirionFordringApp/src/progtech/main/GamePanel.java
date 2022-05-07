@@ -3,6 +3,8 @@ package progtech.main;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,17 +36,36 @@ public class GamePanel extends JPanel
     {
         this.img = importImg("res/sprites.png");
     }
-
+    private  TownHallBottomPanel townHallPanel;
     private void addButtons()
     {
 
         BufferedImage townhall =  importImg("res/BTNTownHall.png");
         javax.swing.JButton btnTownHall = new javax.swing.JButton(new ImageIcon(townhall));
-        btnTownHall.addActionListener(e -> {
+       /* btnTownHall.addActionListener(e -> {
             //Ide kell meghívni a másik panelt
 
             System.out.println("CSO");
 
+        });*/
+
+        btnTownHall.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(townHallPanel == null)
+                {
+                    townHallPanel= new TownHallBottomPanel();
+                    add(townHallPanel);
+
+                    revalidate();
+                    repaint();
+                    System.out.println("Townhall megnyomva");
+                }
+                else
+                {
+                    System.out.println("TownHall-t már megnyomtad");
+                }
+            }
         });
         btnTownHall.setLocation(getWidth() / 2, getHeight() / 2);
         btnTownHall.setSize(IMAGE_UNIT_SIZE*2,IMAGE_UNIT_SIZE*2);

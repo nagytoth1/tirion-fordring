@@ -40,13 +40,13 @@ public class FordringFrame extends JFrame
 
        /* g1.setPreferredSize(new Dimension(640, 640));*/
         JPanel g1 = new GamePanel();
-        JPanel t1 = new TownHallBottomPanel();
+        /*JPanel t1 = new TownHallBottomPanel();*/
         JPanel peon = new peonBTNPanel();
 
         add(g1);
-        g1.add(t1);
+        /*g1.add(t1);*/
 
-        t1.add(peon);
+        /*t1.add(peon);*/
         pack();
     }
 
