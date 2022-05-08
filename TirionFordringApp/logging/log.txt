@@ -692,3 +692,33 @@ FINE: Program has been connected to SQL successfully!
 [FINE]	2022. May 07. 09:53:19 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
 [FINE]	2022. May 07. 09:53:39 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
 [FINE]	2022. May 07. 09:53:39 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:38:16 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:38:16 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:41:55 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:41:56 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:42:10 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:42:11 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:42:49 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:42:49 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:44:40 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:44:40 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:45:15 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:45:15 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:45:32 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:45:32 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:46:49 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:46:49 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:47:41 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:47:41 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:49:29 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:49:29 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:51:26 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:51:27 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:55:58 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:55:58 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:56:52 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:56:52 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:57:22 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:57:22 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!
+[FINE]	2022. May 08. 01:57:34 - [progtech.main.UtilHelper$Log.initLogger] - Logger has been initialized
+[FINE]	2022. May 08. 01:57:34 - [progtech.main.UtilHelper$DBConnection.initConnector] - Program has been connected to SQL successfully!

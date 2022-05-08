@@ -23,7 +23,7 @@ public class FordringFrame extends JFrame
     {
         Image titleImage;
         try {
-            titleImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("res/icon.bmp")));
+            titleImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("res/knight.bmp")));
 
         } catch (IOException e) {
             System.out.println(e.getLocalizedMessage());
@@ -40,8 +40,9 @@ public class FordringFrame extends JFrame
 
        /* g1.setPreferredSize(new Dimension(640, 640));*/
         JPanel g1 = new GamePanel();
+        g1.setPreferredSize(new Dimension(640,640));
         /*JPanel t1 = new TownHallBottomPanel();*/
-        JPanel peon = new peonBTNPanel();
+       /* JPanel peon = new UnitBTNPanel();*/
 
         add(g1);
         /*g1.add(t1);*/

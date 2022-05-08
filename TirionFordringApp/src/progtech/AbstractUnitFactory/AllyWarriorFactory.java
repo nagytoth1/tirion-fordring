@@ -17,7 +17,7 @@ public class AllyWarriorFactory extends UnitFactory
     {
         ResultSet s;
         try {
-            s = UtilHelper.DBConnection.getDataFromTable(conn, "units", "A", "peasant");
+            s = UtilHelper.DBConnection.getDataFromTable(conn, "units", "A", "knight");
             return new HordeWarrior(
                     s.getShort("init_hp"),
                     s.getShort("init_cost"),
