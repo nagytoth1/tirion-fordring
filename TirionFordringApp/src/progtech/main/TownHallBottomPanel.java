@@ -1,6 +1,6 @@
 package progtech.main;
 
-import progtech.AbstractUnitFactory.AllyWorkerFactory;
+import progtech.entities.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,12 +10,13 @@ import java.awt.image.BufferedImage;
 
 public class TownHallBottomPanel extends Panel
 {
+    private static Player currentPlayer = FordringFrame.p;
     private BufferedImage img;
     private final byte IMAGE_UNIT_SIZE = 32;
     public TownHallBottomPanel()
     {
-        setBackground(new Color(255,248,220));
-       /* setLocation(-100,-100);*/
+        setBackground(new Color(108, 103, 86));
+        //setLocation(0, getWidth());
         setLayout(new FlowLayout(FlowLayout.CENTER));
         setPreferredSize(new Dimension(640, 100));
 
@@ -23,29 +24,20 @@ public class TownHallBottomPanel extends Panel
         addPeasant();
         addKnight();
     }
-    private int i=1;
+    private int peasantCounter = 1;
     private void addPeasant()
     {
-
         BufferedImage peasant =  importImg("res/peasant.bmp");
-        javax.swing.JButton btnPeasant = new javax.swing.JButton(new ImageIcon(peasant));
-
-
-       /* btnTownHall.addActionListener(e -> {
-            //Ide kell meghívni a másik panelt
-
-            System.out.println("CSO");
-
-        });*/
+        btnPeasant = new javax.swing.JButton(new ImageIcon(peasant));
         btnPeasant.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UnitBTNPanel peonbtn = new UnitBTNPanel();
-                add(peonbtn);
+                unitBtn = new UnitBTNPanel();
+                add(unitBtn);
                 revalidate();
                 repaint();
-                System.out.println(i+ "."  +"Munkás legyártva");
-                i++;
+                System.out.printf("%d munkás legyártva: \"Something need doin'?\"\n", peasantCounter);
+                peasantCounter++;
             }
         });
         btnPeasant.setLocation(getWidth() / 2, getHeight() / 2);
@@ -55,20 +47,11 @@ public class TownHallBottomPanel extends Panel
 
         this.add(btnPeasant);
     }
-    private int j=1;
+    private int knightCounter = 1;
     private void addKnight()
     {
-
         BufferedImage knight =  importImg("res/knight.bmp");
-        javax.swing.JButton btnKnight = new javax.swing.JButton(new ImageIcon(knight));
-
-
-           /* btnTownHall.addActionListener(e -> {
-                //Ide kell meghívni a másik panelt
-
-                System.out.println("CSO");
-
-            });*/
+        btnKnight = new javax.swing.JButton(new ImageIcon(knight));
         btnKnight.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,8 +59,8 @@ public class TownHallBottomPanel extends Panel
                 add(knightbtn);
                 revalidate();
                 repaint();
-                System.out.println(j+ "."  +"Lovag legyártva");
-                j++;
+                System.out.printf("%d harcos legyártva: \"For the Alliance!?\"\n", knightCounter);
+                knightCounter++;
             }
         });
         btnKnight.setLocation(getWidth() / 2, getHeight() / 2);
@@ -87,5 +70,8 @@ public class TownHallBottomPanel extends Panel
 
         this.add(btnKnight);
     }
-
+    //Components
+    private JButton btnKnight;
+    private JButton btnPeasant;
+    private UnitBTNPanel unitBtn;
 }

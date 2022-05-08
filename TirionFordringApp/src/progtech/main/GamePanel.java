@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
 
 public class GamePanel extends JPanel
 {
@@ -20,7 +20,7 @@ public class GamePanel extends JPanel
         try {
             if(imageFile == null)
             {
-                System.out.println("No image file included.");
+                System.out.printf("No image file %s included.\n", path);
                 return null;
             }
             img = ImageIO.read(imageFile);
@@ -39,32 +39,27 @@ public class GamePanel extends JPanel
     private  TownHallBottomPanel townHallPanel;
     private void addButtons()
     {
+        BufferedImage townHallImg =  importImg("res/BTNTownHall.png");
+        if(townHallImg == null)
+        {
+            FordringFrame.logger.setLevel(Level.WARNING);
+            FordringFrame.logger.warning("Given image of town hall does not exist");
+            return;
+        }
+        javax.swing.JButton btnTownHall = new javax.swing.JButton(new ImageIcon(townHallImg));
 
-        BufferedImage townhall =  importImg("res/BTNTownHall.png");
-        javax.swing.JButton btnTownHall = new javax.swing.JButton(new ImageIcon(townhall));
-       /* btnTownHall.addActionListener(e -> {
-            //Ide kell meghívni a másik panelt
-
-            System.out.println("CSO");
-
-        });*/
-
-        btnTownHall.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(townHallPanel == null)
-                {
-                    townHallPanel= new TownHallBottomPanel();
-                    add(townHallPanel);
-
-                    revalidate();
-                    repaint();
-                    System.out.println("Townhall megnyomva");
-                }
-                else
-                {
-                    System.out.println("TownHall-t már megnyomtad");
-                }
+        btnTownHall.addActionListener(e -> {
+            if(townHallPanel == null)
+            {
+                townHallPanel = new TownHallBottomPanel();
+                add(townHallPanel);
+                revalidate();
+                repaint();
+                System.out.println("Townhall megnyomva");
+            }
+            else
+            {
+                System.out.println("TownHall-t már megnyomtad");
             }
         });
         btnTownHall.setLocation(getWidth() / 2, getHeight() / 2);

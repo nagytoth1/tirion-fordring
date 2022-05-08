@@ -40,7 +40,7 @@ public class Player implements Subject
     }
 
     @Override
-    public void notifyObserver()
+    public void notifyObservers()
     {
         this.achievementHandler.update(this);
     }
@@ -72,17 +72,17 @@ public class Player implements Subject
     //helyesebben az AchievementHandler: ő fogja kapni az infót, hogy a játékos mit ért el, ő fogja megjeleníteni a jobb felső sarokban pl. az achievementet
     private void fiveHundredGoldSpent()
     {
-        notifyObserver(); //ez meghívja az update metódusát, magát az eseményt is át kéne adni, hogy mi váltotta ki
+        notifyObservers(); //ez meghívja az update metódusát, magát az eseményt is át kéne adni, hogy mi váltotta ki
     }
 
     private void atLeastFiveBuildingsBuilt()
     {
-        notifyObserver();
+        notifyObservers();
     }
 
     private void atLeastFiveUnitsCreated()
     {
-        notifyObserver();
+        notifyObservers();
     }
     
     

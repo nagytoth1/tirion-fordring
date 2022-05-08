@@ -6,7 +6,7 @@ public class AchievementHandler implements Observer
     @Override
     public void update(Subject s)
     {
-        
+        s.notifyObservers();
     }
 
 }
