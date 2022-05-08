@@ -1,8 +1,13 @@
 package progtech.main;
 
+import progtech.AbstractUnitFactory.AllyWarriorFactory;
+import progtech.AbstractUnitFactory.AllyWorkerFactory;
+import progtech.entities.AllyWarrior;
 import progtech.entities.Player;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,33 +17,30 @@ public class TownHallBottomPanel extends Panel
 {
     private static Player currentPlayer = FordringFrame.p;
     private BufferedImage img;
+    private GamePanel panel;
     private final byte IMAGE_UNIT_SIZE = 32;
-    public TownHallBottomPanel()
+    public TownHallBottomPanel(GamePanel panel)
     {
-        setBackground(new Color(108, 103, 86));
-        //setLocation(0, getWidth());
-        setLayout(new FlowLayout(FlowLayout.CENTER));
-        setPreferredSize(new Dimension(640, 100));
-
         setVisible(true); //elhelyezést kéne beállítani hogy a képernyő alján legyen
+        setBackground(new Color(108, 103, 86));
+        setPreferredSize(new Dimension(240, 85));
+        this.panel = panel;
         addPeasant();
         addKnight();
+
     }
     private int peasantCounter = 1;
     private void addPeasant()
     {
         BufferedImage peasant =  importImg("res/peasant.bmp");
         btnPeasant = new javax.swing.JButton(new ImageIcon(peasant));
-        btnPeasant.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                unitBtn = new UnitBTNPanel();
-                add(unitBtn);
-                revalidate();
-                repaint();
-                System.out.printf("%d munkás legyártva: \"Something need doin'?\"\n", peasantCounter);
-                peasantCounter++;
-            }
+
+        btnPeasant.addActionListener(e -> {
+            revalidate();
+            repaint();
+            panel.workerFactory.CreateUnit();
+            System.out.printf("%d. munkás legyártva: \"Something need doin'?\"\n", peasantCounter);
+            peasantCounter++;
         });
         btnPeasant.setLocation(getWidth() / 2, getHeight() / 2);
         btnPeasant.setSize(IMAGE_UNIT_SIZE*2,IMAGE_UNIT_SIZE*2);
@@ -50,18 +52,14 @@ public class TownHallBottomPanel extends Panel
     private int knightCounter = 1;
     private void addKnight()
     {
-        BufferedImage knight =  importImg("res/knight.bmp");
-        btnKnight = new javax.swing.JButton(new ImageIcon(knight));
-        btnKnight.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UnitBTNPanel knightbtn = new UnitBTNPanel();
-                add(knightbtn);
-                revalidate();
-                repaint();
-                System.out.printf("%d harcos legyártva: \"For the Alliance!?\"\n", knightCounter);
-                knightCounter++;
-            }
+        BufferedImage knightImg =  importImg("res/knight.bmp");
+        btnKnight = new javax.swing.JButton(new ImageIcon(knightImg));
+        btnKnight.addActionListener(e -> {
+            revalidate();
+            repaint();
+            panel.warrFactory.CreateUnit();
+            System.out.printf("%d. harcos legyártva: \"For the Alliance!\"\n", knightCounter);
+            knightCounter++;
         });
         btnKnight.setLocation(getWidth() / 2, getHeight() / 2);
         btnKnight.setSize(IMAGE_UNIT_SIZE*2,IMAGE_UNIT_SIZE*2);
@@ -73,5 +71,5 @@ public class TownHallBottomPanel extends Panel
     //Components
     private JButton btnKnight;
     private JButton btnPeasant;
-    private UnitBTNPanel unitBtn;
+    private JFrame mainFrame;
 }

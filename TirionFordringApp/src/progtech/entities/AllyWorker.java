@@ -6,5 +6,5 @@ public class AllyWorker extends Unit
     {
         this((byte)50,(byte)10,"Peasant");
     }
-    public AllyWorker(short hp, short cost, String dispName){ super(hp, cost, dispName);}
+    public AllyWorker(short hp, short cost, String dispName){ super(hp, cost, dispName); }
 }

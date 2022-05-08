@@ -1,5 +1,8 @@
 package progtech.main;
 
+import progtech.AbstractUnitFactory.AllyWarriorFactory;
+import progtech.AbstractUnitFactory.AllyWorkerFactory;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -8,11 +11,13 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.logging.Level;
 
 public class GamePanel extends JPanel
 {
-
+    public AllyWorkerFactory workerFactory;
+    public AllyWarriorFactory warrFactory;
     private BufferedImage importImg(String path)
     {
         BufferedImage img = null;
@@ -35,6 +40,14 @@ public class GamePanel extends JPanel
     public GamePanel()
     {
         this.img = importImg("res/sprites.png");
+        setPreferredSize(new Dimension(640,640));
+        try {
+            workerFactory  = new AllyWorkerFactory();
+            warrFactory = new AllyWarriorFactory();
+        } catch (SQLException e) {
+            FordringFrame.logger.setLevel(Level.WARNING);
+            FordringFrame.logger.warning("Error in database..." + e.getLocalizedMessage());
+        }
     }
     private  TownHallBottomPanel townHallPanel;
     private void addButtons()
@@ -51,15 +64,18 @@ public class GamePanel extends JPanel
         btnTownHall.addActionListener(e -> {
             if(townHallPanel == null)
             {
-                townHallPanel = new TownHallBottomPanel();
-                add(townHallPanel);
+                townHallPanel = new TownHallBottomPanel(this);
+                add(townHallPanel, BorderLayout.SOUTH);
                 revalidate();
                 repaint();
                 System.out.println("Townhall megnyomva");
             }
             else
             {
-                System.out.println("TownHall-t már megnyomtad");
+                remove(townHallPanel);
+                townHallPanel = null;
+                revalidate();
+                repaint();
             }
         });
         btnTownHall.setLocation(getWidth() / 2, getHeight() / 2);

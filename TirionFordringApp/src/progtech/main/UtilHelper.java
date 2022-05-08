@@ -54,45 +54,46 @@ public class UtilHelper {
     
     public static class DBConnection
     {
+        public static Connection dbConnection = null;
         /**
          * The method which allows for the database connection to be established properly.
          * @return A Connection-instance allowing us to execute SQL-commands within our Java-implementation.
          */
         public static Connection initConnector()
         {
-            Logger l = Log.logger; Connection conn = null;
+            Logger l = Log.logger;
             String dbFilePath = Configurations.get("DB_PATH");
             
             try
             {
                 if(dbFilePath.equals("undefined")) throw new SQLException();
-                conn = DriverManager.getConnection(
+                dbConnection = DriverManager.getConnection(
                         String.format("jdbc:sqlite:%s", 
                                 dbFilePath)
                 );
                 l.setLevel(Level.FINE);
                 l.fine("Program has been connected to SQL successfully!");
-                return conn;
+                return dbConnection;
             } catch (SQLException e)
             {
                 l.setLevel(Level.WARNING);
                 l.warning("Database connection failed to be established");
                 return null;
-            } finally
-            {
-                if(conn != null) try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    l.setLevel(Level.WARNING);
-                    l.warning("SQL-Connection failed to be closed");
-                }
-                
             }
         }
 
-        public static ResultSet getDataFromTable(Connection conn, String tablename, String factionCriteria, String buildingCriteria) throws SQLException {
-            Statement st = conn.createStatement();
-            return st.executeQuery(String.format("SELECT * FROM %s WHERE faction='%s' AND ", tablename, factionCriteria)  + " type LIKE '%"  + buildingCriteria + "%';");
+        public static ResultSet getDataFromTable(String tablename, String factionCriteria, String typeCriteria) throws SQLException {
+            if(dbConnection == null)
+            {
+                Log.logger.setLevel(Level.WARNING);
+                Log.logger.warning("No database connected");
+                return null;
+            }
+            Statement st = dbConnection.createStatement();
+            String sql = String.format("SELECT * FROM %s WHERE faction='%s'", tablename, factionCriteria)  + " AND type LIKE '%"  + typeCriteria + "%';";
+            Log.logger.setLevel(Level.FINE);
+            Log.logger.fine(sql);
+            return st.executeQuery(sql);
         }
     }
     

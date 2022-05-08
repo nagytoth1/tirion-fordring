@@ -1,5 +1,6 @@
 package progtech.AbstractUnitFactory;
 
+import progtech.entities.AllyWorker;
 import progtech.entities.HordeWarrior;
 import progtech.entities.HordeWorker;
 import progtech.entities.Unit;
@@ -11,20 +12,20 @@ import java.sql.SQLException;
 
 public class HordeWorkerFactory extends UnitFactory
 {
-
-
-    @Override
-    public Unit CreateUnit(Connection conn)
+    public HordeWorkerFactory() throws SQLException
     {
-        ResultSet s;
+        super(UtilHelper.DBConnection.getDataFromTable("units", "H", "work"));
+    }
+    @Override
+    public Unit CreateUnit() {
+        if(unitDetails == null) return new AllyWorker();
         try {
-            s = UtilHelper.DBConnection.getDataFromTable(conn, "units", "H", "peon");
-            return new HordeWarrior(
-                    s.getShort("init_hp"),
-                    s.getShort("init_cost"),
-                    s.getString("type"));
+            return new AllyWorker(
+                    unitDetails.getShort("init_hp"),
+                    unitDetails.getShort("init_cost"),
+                    unitDetails.getString("disp_name"));
         } catch (SQLException e) {
-            return new HordeWarrior();
+            return new AllyWorker();
         }
     }
 }

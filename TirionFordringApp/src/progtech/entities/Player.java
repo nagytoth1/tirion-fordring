@@ -40,9 +40,9 @@ public class Player implements Subject
     }
 
     @Override
-    public void notifyObservers()
+    public void notifyObservers(String message)
     {
-        this.achievementHandler.update(this);
+        this.achievementHandler.update(message);
     }
 
     public int getCurrentWood(){ return currentWood; }
@@ -67,23 +67,11 @@ public class Player implements Subject
         this.ownedUnits = ownedUnits;
         if(ownedUnits.size() - DEF_UNIT_NUMBER >= 5) atLeastFiveUnitsCreated();
     }
+    private void fiveHundredGoldSpent(){ notifyObservers("You have spent 500 gold."); }
 
-    //ki lesz az observer? maga a screen, ami a grafikus felületet adja, 
-    //helyesebben az AchievementHandler: ő fogja kapni az infót, hogy a játékos mit ért el, ő fogja megjeleníteni a jobb felső sarokban pl. az achievementet
-    private void fiveHundredGoldSpent()
-    {
-        notifyObservers(); //ez meghívja az update metódusát, magát az eseményt is át kéne adni, hogy mi váltotta ki
-    }
+    private void atLeastFiveBuildingsBuilt(){ notifyObservers("You have built at least five buildings."); }
 
-    private void atLeastFiveBuildingsBuilt()
-    {
-        notifyObservers();
-    }
-
-    private void atLeastFiveUnitsCreated()
-    {
-        notifyObservers();
-    }
+    private void atLeastFiveUnitsCreated(){ notifyObservers("You have recruited at least five units."); }
     
     
     

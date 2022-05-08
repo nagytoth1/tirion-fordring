@@ -11,19 +11,20 @@ import java.sql.SQLException;
 
 public class AllyWorkerFactory extends UnitFactory
 {
-
-    @Override
-    public Unit CreateUnit(Connection conn)
+    public AllyWorkerFactory() throws SQLException
     {
-        ResultSet s;
+        super(UtilHelper.DBConnection.getDataFromTable("units", "A", "work"));
+    }
+    @Override
+    public Unit CreateUnit() {
+        if(unitDetails == null) return new AllyWorker();
         try {
-            s = UtilHelper.DBConnection.getDataFromTable(conn, "units", "A", "peasant");
-            return new HordeWarrior(
-                    s.getShort("init_hp"),
-                    s.getShort("init_cost"),
-                    s.getString("type"));
+            return new AllyWorker(
+                    unitDetails.getShort("init_hp"),
+                    unitDetails.getShort("init_cost"),
+                    unitDetails.getString("disp_name"));
         } catch (SQLException e) {
-            return new HordeWarrior();
+            return new AllyWorker();
         }
     }
 }

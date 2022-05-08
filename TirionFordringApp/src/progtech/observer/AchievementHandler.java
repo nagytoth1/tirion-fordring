@@ -1,12 +1,18 @@
 package progtech.observer;
 
+import javax.swing.*;
+
 public class AchievementHandler implements Observer
 {
-
-    @Override
-    public void update(Subject s)
+    private JLabel component;
+    public AchievementHandler(JLabel l)
     {
-        s.notifyObservers();
+        this.component = l;
+    }
+    @Override
+    public void update(String message)
+    {
+        this.component.setText(message);
     }
 
 }

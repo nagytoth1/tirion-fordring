@@ -11,11 +11,11 @@ import java.sql.SQLException;
 public class AllyBarackFactory extends BuildingFactory
 {
     @Override
-    public Building CreateBuilding(Player p, Connection conn) {
-        if(p.getOwnedUnits().size() >0) {
+    public Building CreateBuilding(Player p) {
+        if(p.getOwnedUnits().size() > 0) {
             ResultSet s;
             try {
-                s = UtilHelper.DBConnection.getDataFromTable(conn,"buildings","A", "bar");
+                s = UtilHelper.DBConnection.getDataFromTable("buildings","A", "bar");
                 return new AllyBarack(
                         s.getShort("init_hp"),
                         s.getShort("init_cost_gold"),

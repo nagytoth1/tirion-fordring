@@ -1,31 +1,35 @@
 package progtech.main;
 
+import progtech.AbstractUnitFactory.AllyWarriorFactory;
+import progtech.AbstractUnitFactory.AllyWorkerFactory;
 import progtech.entities.Player;
+import progtech.observer.AchievementHandler;
 import progtech.observer.Observer;
 import progtech.observer.Subject;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.Objects;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FordringFrame extends JFrame implements Observer
+public class FordringFrame extends JFrame
 {
     public static Logger logger;
     public static Player p;
     public static Connection conn;
+    private JPanel mainPanel;
 
     public FordringFrame(){ setupFrame(); }
 
     private void setupFrame()
     {
+        logger = UtilHelper.Log.initLogger();
+        conn = UtilHelper.DBConnection.initConnector();
+        p = new Player();
+        p.setObserver(new AchievementHandler(l1));
         Image titleImage;
         try {
             titleImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("res/knight.bmp")));
@@ -34,37 +38,25 @@ public class FordringFrame extends JFrame implements Observer
             System.out.println(e.getLocalizedMessage());
             return;
         }
+
         setIconImage(titleImage);
         setTitle("Tirion Fordring");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
         setPreferredSize(new Dimension(640, 640));
+
         setLayout(new BorderLayout());
 
-        g1 = new GamePanel();
-        g1.setPreferredSize(new Dimension(640,640));
-        add(g1);
+        mainPanel = new GamePanel();
+        add(mainPanel);
 
-        l1 = new JLabel();
-        l1.setText("Üdvözlöm");
-        l1.setSize(50, 50);
-        add(l1);
         pack();
-        p = new Player();
-        logger = UtilHelper.Log.initLogger();
-        conn = UtilHelper.DBConnection.initConnector();
+        setLocationRelativeTo(null);
     }
 
     public static void main(String[] args)
     {
         new FordringFrame().setVisible(true);
-    }
-    @Override
-    public void update(Subject s) {
-        if(!(s instanceof Player)) { logger.warning("User does not exist!"); return; }
-        Player p = (Player) s;
-        if(p.getSumGold() >= 500) l1.setText("500 Gold elköltve!");
     }
 
     //components in Frame
