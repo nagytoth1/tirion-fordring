@@ -1,12 +1,14 @@
 package progtech.test;
 
-import progtech.entities.Player;
+import progtech.AbstractBuildingFactory.AllyTownHallFactory;
+import progtech.entities.*;
+import progtech.observer.AchievementHandler;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
     //the test instance of the class whose method we are testing
-    private static final Player p = new Player();
+    private static final Player p = new Player(new AchievementHandler(null));
 
     @org.junit.jupiter.api.Test
     void setCurrentWood8000() {
@@ -107,12 +109,40 @@ class PlayerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void setOwnedBuildings() {
-
+    void addUnit()
+    {
+        for (int i = 0; i<10; i++)
+        {
+            try
+            {
+                p.addUnit(new HordeWorker());
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        assertThrows(Exception.class,
+            () -> p.addUnit(new HordeWorker()),
+            "Can't increase the amount of units!");
     }
 
     @org.junit.jupiter.api.Test
-    void setOwnedUnits() {
-
+    void addBuildings()
+    {
+        for (int i = 0; i<10; i++)
+        {
+            try
+            {
+                p.addBuildings(new HordeBarack());
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        assertThrows(Exception.class,
+                () -> p.addBuildings(new HordeBarack()),
+                "Can't increase the amount of buildings!");
     }
 }

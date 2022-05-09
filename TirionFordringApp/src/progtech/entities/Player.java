@@ -2,6 +2,8 @@ package progtech.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import progtech.observer.AchievementHandler;
 import progtech.observer.Observer;
 import progtech.observer.Subject;
 
@@ -16,13 +18,14 @@ public class Player implements Subject
     private List<Unit> ownedUnits;
     private Observer achievementHandler; //ő fogja figyelni a játékos által elért eredményeket
 
-    public Player()
+    public Player(AchievementHandler achievementHandler)
     {
         this.currentGold = 300; //300 gold
         this.currentWood = 300; //300 fa
         this.sumGold = 0; //alapból 0 pénz
         ownedBuildings = new ArrayList<>(); //townhall-t alapból megkapja
         ownedUnits = new ArrayList<>(); //kaphatna 3 peon-t ingyen, viszont akkor ennyit le kell vonni az achievement miatt
+        this.achievementHandler = achievementHandler;
     }
 
     @Override
@@ -39,11 +42,7 @@ public class Player implements Subject
         this.achievementHandler = null;
     }
 
-    @Override
-    public void notifyObservers(String message)
-    {
-        this.achievementHandler.update(message);
-    }
+
 
     public int getCurrentWood(){ return currentWood; }
     public void setCurrentWood(int currentWood) throws Exception {
@@ -86,26 +85,56 @@ public class Player implements Subject
     }
 
     public List<Building> getOwnedBuildings(){ return ownedBuildings; }
-    public void setOwnedBuildings(List<Building> ownedBuildings){ 
-        this.ownedBuildings = ownedBuildings; 
-        if(ownedBuildings.size() - DEF_BUILDING_NUMBER >= 5) atLeastFiveBuildingsBuilt();
+
+    public void addBuildings(Building building) throws Exception
+    {
+        if (ownedBuildings.size() >= 10)
+        {
+            throw new Exception("Can't increase the amount of buildings!");
+        }
+        if(ownedBuildings.size() >= 5)
+        {
+            atLeastFiveUnitsCreated();
+        }
+        ownedBuildings.add(building);
     }
     
     public List<Unit> getOwnedUnits(){ return ownedUnits; }
     
-    public void setOwnedUnits(List<Unit> ownedUnits)
-    {
-        this.ownedUnits = ownedUnits;
-        if(ownedUnits.size() - DEF_UNIT_NUMBER >= 5) atLeastFiveUnitsCreated();
+    public void addUnit(Unit unit) throws Exception {
+        if (ownedUnits.size() >= 10)
+        {
+            throw new Exception("Can't increase the amount of units!");
+        }
+        if(ownedUnits.size() == 5)
+        {
+            atLeastFiveUnitsCreated();
+        }
+        ownedUnits.add(unit);
     }
-    private void fiveHundredGoldSpent(){ notifyObservers("You have spent 500 gold."); }
+    private void fiveHundredGoldSpent()
+    {
+        notifyObservers("You have spent 500 gold.");
+    }
 
-    private void atLeastFiveBuildingsBuilt(){ notifyObservers("You have built at least five buildings."); }
+    private void atLeastFiveBuildingsBuilt()
+    {
+        notifyObservers("You have built at least five buildings.");
+    }
 
-    private void atLeastFiveUnitsCreated(){ notifyObservers("You have recruited at least five units."); }
+    private void atLeastFiveUnitsCreated()
+    {
+        notifyObservers("You have recruited at least five units.");
+    }
 
+    @Override
+    public void notifyObservers(String message)
+    {
+        this.achievementHandler.update(message);
+    }
 
-    public void setCurrentGold(int value) {
+    public void setCurrentGold(int value)
+    {
         currentGold = value;
     }
 }

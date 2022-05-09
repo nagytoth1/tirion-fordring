@@ -1,12 +1,14 @@
 package progtech.entities;
 
-public class AllyTownHall extends Building{
+public class AllyTownHall extends Building
+{
     private static AllyTownHall instance = null;
-    private AllyTownHall(short hp, short buildCostGold, short buildCostWood, String displayName) {
+    private AllyTownHall(short hp, short buildCostGold, short buildCostWood, String displayName)
+    {
         super(hp, buildCostGold, buildCostWood, displayName);
     }
 
-    public static AllyTownHall getInstance(short hp, short buildCostGold, short buildCostWood, String displayName)
+    public static AllyTownHall getInstance(short hp, short buildCostGold, short buildCostWood, String displayName) //SINGLETON
     {
         if(instance != null) return instance;
 

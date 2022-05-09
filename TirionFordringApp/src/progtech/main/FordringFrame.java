@@ -28,13 +28,14 @@ public class FordringFrame extends JFrame
     {
         logger = UtilHelper.Log.initLogger();
         conn = UtilHelper.DBConnection.initConnector();
-        p = new Player();
-        p.setObserver(new AchievementHandler(l1));
+        p = new Player(new AchievementHandler(l1));
         Image titleImage;
-        try {
+        try
+        {
             titleImage = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("res/knight.bmp")));
-
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             System.out.println(e.getLocalizedMessage());
             return;
         }
