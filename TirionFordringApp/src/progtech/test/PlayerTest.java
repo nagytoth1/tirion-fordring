@@ -4,11 +4,15 @@ import progtech.AbstractBuildingFactory.AllyTownHallFactory;
 import progtech.entities.*;
 import progtech.observer.AchievementHandler;
 
+import javax.swing.*;
+import java.util.Locale;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
+
     //the test instance of the class whose method we are testing
-    private static final Player p = new Player(new AchievementHandler(null));
+    private static final Player p = new Player(new AchievementHandler(new JLabel("")));
 
     @org.junit.jupiter.api.Test
     void setCurrentWood8000() {
@@ -22,9 +26,18 @@ class PlayerTest {
         assertEquals(expectedWood, p.getCurrentWood());
     }
 
-    //TODO
     @org.junit.jupiter.api.Test
-    void setSumGold501() {
+    void setSumGold501()  //Gold 500 fölött van és vizsgálat -> label text-jét vizsgáljuk
+    {
+        AchievementHandler handler = (AchievementHandler) p.getAchievementHandler();
+        int actualGold = 501;
+
+        p.setSumGold(actualGold);
+
+        String expected = "You have spent 500 gold.";
+
+        assertEquals(expected,handler.getComponent().getText());
+
         //ensure that if gold is set above 500, fiveHundredGoldsSpent is called()
     }
 

@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Timer;
 
@@ -26,8 +27,7 @@ public class TownHallBottomPanel extends Panel
     private AllyWarriorFactory knight;
     private JLabel l1;
     private Timer timer;
-    public TownHallBottomPanel(GamePanel panel)
-    {
+    public TownHallBottomPanel(GamePanel panel)  {
         setVisible(true); //elhelyezést kéne beállítani hogy a képernyő alján legyen
         setBackground(new Color(108, 103, 86));
        /* setPreferredSize(new Dimension(240, 85));*/
@@ -56,8 +56,7 @@ public class TownHallBottomPanel extends Panel
 
     }
     private int peasantCounter = 1;
-    private void addPeasant()
-    {
+    private void addPeasant()  {
         BufferedImage peasant =  importImg("res/peasant.bmp");
         btnPeasant = new javax.swing.JButton(new ImageIcon(peasant));
 
@@ -91,8 +90,7 @@ public class TownHallBottomPanel extends Panel
         this.add(btnPeasant);
     }
     private int knightCounter = 1;
-    private void addKnight()
-    {
+    private void addKnight()  {
         BufferedImage knightImg =  importImg("res/knight.bmp");
         btnKnight = new javax.swing.JButton(new ImageIcon(knightImg));
         btnKnight.addActionListener(e -> {

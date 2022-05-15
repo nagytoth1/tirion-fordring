@@ -17,6 +17,10 @@ public class Player implements Subject
     private List<Building> ownedBuildings;
     private List<Unit> ownedUnits;
     private Observer achievementHandler; //ő fogja figyelni a játékos által elért eredményeket
+    public Observer getAchievementHandler()
+    {
+        return this.achievementHandler;
+    }
 
     public Player(AchievementHandler achievementHandler)
     {
@@ -53,8 +57,15 @@ public class Player implements Subject
     public int getSumGold(){ return sumGold; }
     public void setSumGold(int sumGold)
     {
-        this.sumGold = sumGold;
-        if(sumGold >= 500) fiveHundredGoldSpent();
+
+        if(sumGold >= 500)
+        {
+            fiveHundredGoldSpent();
+        }
+        else
+        {
+            this.sumGold = sumGold;
+        }
     }
 
     public int getCurrentGold() {

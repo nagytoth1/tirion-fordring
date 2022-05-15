@@ -8,18 +8,20 @@ import java.io.InputStream;
 import java.util.logging.Level;
 
 public abstract class Panel extends JPanel {
-    protected BufferedImage importImg(String path)
+    public boolean catched = false;
+    public BufferedImage importImg(String path)
+
     {
         BufferedImage img = null;
         InputStream imageFile = getClass().getResourceAsStream(path);
         try {
             if(imageFile == null)
             {
-                System.out.println("No image file included.");
-                return null;
+                throw new IOException();
             }
             img = ImageIO.read(imageFile);
         } catch (IOException e) {
+            catched = true;
             System.out.println(e.getLocalizedMessage());
         }
         return img;

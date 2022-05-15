@@ -11,6 +11,10 @@ public class AchievementHandler implements Observer
     {
         this.component = l;
     }
+    public JLabel getComponent()
+    {
+        return this.component;
+    }
     @Override
     public void update(String message)
     {

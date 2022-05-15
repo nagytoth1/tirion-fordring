@@ -14,11 +14,12 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class GamePanel extends JPanel
+public class GamePanel extends Panel
 {
     public AllyWorkerFactory workerFactory;
     public AllyWarriorFactory warrFactory;
-    private BufferedImage importImg(String path)
+    @Override
+    public BufferedImage importImg(String path)
     {
         BufferedImage img = null;
         InputStream imageFile = getClass().getResourceAsStream(path);
@@ -65,6 +66,8 @@ public class GamePanel extends JPanel
             if(townHallPanel == null)
             {
                 townHallPanel = new TownHallBottomPanel(this);
+
+
                 add(townHallPanel, BorderLayout.SOUTH);
                 revalidate();
                 repaint();
